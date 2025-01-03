@@ -1,0 +1,7 @@
+.layoutWrapper {
+  @apply flex min-h-screen w-full bg-white text-black;
+}
+
+.mainContent {
+  @apply w-full p-8;
+}

@@ -1,0 +1,7 @@
+.cardContainer {
+  @apply hidden rounded-[2.5rem] px-10 pt-14 lg:flex lg:w-6/12 lg:flex-col lg:gap-5 lg:bg-gradient-to-br lg:from-[#BFA170] lg:from-50% lg:to-slate-50 xl:px-16 xl:pt-24;
+}
+
+.centerRow {
+  @apply flex flex-row items-center justify-center;
+}

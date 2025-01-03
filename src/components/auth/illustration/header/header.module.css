@@ -1,0 +1,7 @@
+.title {
+  @apply text-3xl font-semibold leading-[1.4] text-white lg:text-[2.5rem] xl:text-[3.125rem];
+}
+
+.subtitle {
+  @apply text-base font-light text-white lg:text-lg;
+}

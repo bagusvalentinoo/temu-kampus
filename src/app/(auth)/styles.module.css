@@ -1,0 +1,24 @@
+.formContainer {
+  @apply space-y-6;
+}
+
+.formFields {
+  @apply space-y-4;
+}
+
+.formForgotPassword {
+  @apply my-3 flex w-full items-center justify-end;
+}
+
+.formForgotPasswordText {
+  @apply text-sm font-light text-[#BFA170] hover:text-[#A88A61];
+}
+
+.formButton {
+  @apply w-full py-6 font-semibold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.formButtonLoading {
+  @apply mr-2 h-4 w-4 animate-spin
+}

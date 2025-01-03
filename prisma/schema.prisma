@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model User {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String?
+  email    String  @unique
+  role     String
+  password String
+
+  createdEvents Event[]            @relation("UserEvents")
+  reviews       Review[]           @relation("UserReviews")
+  notifications Notification[]     @relation("UserNotifications")
+  participants  EventParticipant[]
+}
+
+model Location {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  address   String
+  createdAt DateTime @default(now())
+
+  events Event[]
+}
+
+model Resource {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  quantity   Int
+  consumable Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  events EventResource[]
+}
+
+model Event {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  dateStart   DateTime
+  dateEnd     DateTime
+  category    String
+
+  locationId String?   @db.ObjectId
+  location   Location? @relation(fields: [locationId], references: [id], onDelete: SetNull)
+
+  createdBy String @db.ObjectId
+  creator   User   @relation("UserEvents", fields: [createdBy], references: [id], onDelete: Cascade)
+
+  participants  EventParticipant[]
+  reviews       Review[]
+  resources     EventResource[]
+  notifications Notification[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Review {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation("UserReviews", fields: [userId], references: [id], onDelete: Cascade)
+  eventId   String   @db.ObjectId
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation("UserNotifications", fields: [userId], references: [id], onDelete: Cascade)
+  eventId   String?  @db.ObjectId
+  event     Event?   @relation(fields: [eventId], references: [id], onDelete: SetNull)
+  content   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model EventParticipant {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eventId   String   @db.ObjectId
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@unique([userId, eventId])
+}
+
+model EventResource {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  eventId    String   @db.ObjectId
+  event      Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  resourceId String   @db.ObjectId
+  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade)
+  quantity   Int
+
+  @@unique([eventId, resourceId])
+}

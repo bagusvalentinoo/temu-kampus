@@ -1,0 +1,7 @@
+.buttonBackText {
+  @apply flex flex-col items-center justify-center gap-2 text-center text-sm font-light md:flex-row;
+}
+
+.buttonBackLink {
+  @apply text-[#BFA170] hover:text-[#A88A61];
+}

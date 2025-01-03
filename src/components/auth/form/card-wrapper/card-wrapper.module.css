@@ -1,0 +1,39 @@
+.cardWrapper {
+  @apply flex w-full flex-col items-center justify-center gap-8 p-10 lg:w-6/12 lg:p-8;
+}
+
+.cardHeader {
+  @apply flex items-center justify-center gap-2 md:gap-3;
+}
+
+.cardLogo {
+  @apply rounded-full bg-slate-800 p-3 text-xl font-bold text-white;
+}
+
+.cardTitle {
+  @apply text-center text-2xl font-bold text-gray-800;
+}
+
+.textCenter {
+  @apply text-center;
+}
+
+.cardSubtitle {
+  @apply mb-[0.094rem] text-3xl font-bold;
+}
+
+.cardDescription {
+  @apply text-sm font-light;
+}
+
+.cardContent {
+  @apply w-full xl:w-10/12;
+}
+
+.cardFooterText {
+  @apply flex flex-col items-center gap-2 text-sm font-normal lg:flex-row;
+}
+
+.cardFooterLink {
+  @apply text-sm text-[#BFA170] hover:text-[#A88A61];
+}

@@ -1,0 +1,7 @@
+.fullScreenCenter {
+  @apply flex min-h-screen w-full items-center justify-center bg-gray-100;
+}
+
+.cardContainer {
+  @apply flex w-11/12 items-center justify-center gap-10 rounded-[2.5rem] bg-white p-5 shadow-lg lg:p-12;
+}
