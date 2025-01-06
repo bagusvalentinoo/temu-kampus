@@ -1,138 +1,145 @@
 # Temu Kampus - School and Campus Event Management System
 
-Temu Kampus is an application designed to facilitate event management within school and campus environments. This
-application offers features such as user registration, event creation, participant registration, event calendar, and
-post-event feedback. With Temu Kampus, all event management processes can be carried out digitally, effectively, and
-efficiently.
+## 📝 Description
+**Temu Kampus** is a modern application designed to simplify event management for schools and campuses. It streamlines processes such as user registration, event creation, participant registration, event scheduling, and post-event feedback. With Temu Kampus, organizing events becomes more efficient and accessible through digital tools.
 
-## Demo
+---
 
-```
-https://temu-kampus.vercel.app/
-```
+## 🌐 Demo
+You can try the live demo here:  
+[Temu Kampus Demo](https://temu-kampus.vercel.app/)
 
-## Users
+### Test User Accounts
+1. **Admin**
+    - Email: `admin@temukampus.com`
+    - Password: `admin1234!`
+2. **Lecturer**
+    - Email: `lecturer@temukampus.com`
+    - Password: `lecturer1234!`
+3. **Student**
+    - Email: `student@temukampus.com`
+    - Password: `student1234!`
 
-1. Admin
-    - Email: admin@temukampus.com
-    - Password: admin1234!
-2. Lecturer
-    - Email: lecturer@temukampus.com
-    - Password: lecturer1234!
-3. Student
-    - Email: student@temukampus.com
-    - Password: student1234!
+---
 
-## Key Features
+## ✨ Key Features
+- **User Management:**
+  - Separate roles for admin, lecturers, and students.
+- **Event Creation & Management:**
+  - Create and manage events with detailed descriptions, schedules, and locations.
+- **Participant Registration:**
+  - Online registration forms for participants.
+- **Event Calendar:**
+  - A centralized calendar to view and filter events by category, date, or location.
+- **Notifications & Reminders:**
+  - Email or SMS notifications for event updates and confirmations.
+- **Feedback System:**
+  - Users can submit reviews and feedback for events.
+- **Administrative Dashboard:**
+  - Real-time insights on attendance, reviews, and event statistics.
 
-- **User Registration and Login**
-    - Users (students, lecturers, admins) can register and log in to the system with appropriate access rights.
+---
 
-- **Event Creation and Management**
-    - Users can create events, set the date, time, location, and provide detailed event descriptions.
-
-- **Participant Registration**
-    - Students and lecturers can register to attend events using the available online forms.
-
-- **Event Calendar**
-    - Displays a list of upcoming events with filter options based on event category, date, or location.
-
-- **Notifications and Reminders**
-    - Reminders are sent via email or SMS for registration confirmation and event schedule updates.
-
-- **Venue and Resource Management**
-    - Manage event locations and resources needed such as equipment and supplies.
-
-- **Event Reviews and Feedback**
-    - Users can provide reviews and feedback after the event for further evaluation.
-
-- **Administrative Dashboard**
-    - Shows statistics such as the number of registrations, attendance, and event reviews.
-
-## Technologies Used
-
-- **Framework:** Next.js V14
+## 🛠️ Technologies Used
+- **Framework:** Next.js v14
 - **Package Manager:** Bun
 - **Programming Language:** TypeScript
 - **Database:** MongoDB
-- **Authentication:** NextAuth V5
+- **Authentication:** NextAuth v5
+- **ORM:** Prisma
 
-## Installation
+---
 
-1. Clone this repository:
+## 🔧 Installation
 
-   ```bash
-   git clone https://github.com/username/temu-kampus.git
-   cd temu-kampus
-   ```
-2. Copy the `.env.example` file to `.env`and update the environment variables:
+### Local Installation
 
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Install dependencies using Bun:
-
-   ```bash
-   bun install
-   ```
-
-4. Run generate prisma client:
-
+1. **Clone the repository:**
     ```bash
-   bunx prisma generate
-   ```
+    git clone https://github.com/bagusvalentinoo/temu-kampus.git
+    cd temu-kampus
+    ```
 
-5. Run prisma db push:
+2. **Configure environment variables:**
+    - Copy the example `.env` file and update the values as needed:
+      ```bash
+      cp .env.example .env
+      ```
 
+3. **Install dependencies using Bun:**
     ```bash
-   bunx prisma db push
-   ```
+    bun install
+    ```
 
-6. Run the application in the development environment:
-
-   ```bash
-   bun dev
-   ```
-
-7. Access the application at `http://localhost:3000`.
-
-## Install via Docker
-
-1. Run generate ops/generate-mongodb-keyfile.sh:
-
+4. **Generate Prisma Client:**
     ```bash
-   ops/generate-mongodb-keyfile.sh
-   ```
+    bunx prisma generate
+    ```
 
-2. Copy the `ops/.env.example` file to `ops/.env`and update the environment variables:
-
-   ```bash
-   cp ops/.env.example ops/.env
-   ```
-
-3. Run docker-compose up:
-
+5. **Push database schema:**
     ```bash
-   docker compose -f ops/dev.docker-compose.yml -p temu-kampus up -d --build
-   ```
+    bunx prisma db push
+    ```
 
-4. Access the application at `http://localhost:7001`.
+6. **Start the development server:**
+    ```bash
+    bun dev
+    ```
 
-## Migration and Database Seeding
+7. **Access the application:**
+    Open your browser and navigate to `http://localhost:3000`.
 
-Migration:
+---
 
-```bash
-bunx prisma db push
-```
+### Installation via Docker
 
-Seed the database:
+1. **Generate MongoDB Keyfile:**
+    ```bash
+    ops/generate-mongodb-keyfile.sh
+    ```
 
-```bash
-bun run prisma:seed
-```
+2. **Configure environment variables:**
+    - Copy the example `.env` file for Docker and update as needed:
+      ```bash
+      cp ops/.env.example ops/.env
+      ```
 
-## License
+3. **Start the application using Docker Compose:**
+    ```bash
+    docker compose -f ops/dev.docker-compose.yml -p temu-kampus up -d --build
+    ```
 
-Temu Kampus is licensed under the [MIT License](./LICENSE).
+4. **Access the application:**
+    Navigate to `http://localhost:7001`.
+
+---
+
+## 📊 Migration & Database Seeding
+
+- **Apply database schema:**
+    ```bash
+    bunx prisma db push
+    ```
+
+- **Seed the database with sample data:**
+    ```bash
+    bun run prisma:seed
+    ```
+
+---
+
+## 📜 License
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+## 📞 Support
+If you encounter any issues or have questions, feel free to [open an issue](https://github.com/bagusvalentinoo/temu-kampus/issues) or contact the maintainers.
+
+---
+
+## 📚 Resources
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Bun Documentation](https://bun.sh/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [MongoDB Documentation](https://www.mongodb.com/docs)
