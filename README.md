@@ -7,7 +7,7 @@
 
 ## 🌐 Demo
 You can try the live demo here:  
-[Temu Kampus Demo](https://temu-kampus.vercel.app/)
+<a href="https://temu-kampus.vercel.app/" target="_blank">Temu Kampus Demo</a>
 
 ### Test User Accounts
 1. **Admin**
@@ -134,12 +134,12 @@ This project is licensed under the [MIT License](./LICENSE).
 ---
 
 ## 📞 Support
-If you encounter any issues or have questions, feel free to [open an issue](https://github.com/bagusvalentinoo/temu-kampus/issues) or contact the maintainers.
+If you encounter any issues or have questions, feel free to <a href="https://github.com/bagusvalentinoo/temu-kampus/issues" target="_blank">open an issue</a> or contact the maintainers.
 
 ---
 
 ## 📚 Resources
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Bun Documentation](https://bun.sh/docs)
-- [Prisma Documentation](https://www.prisma.io/docs)
-- [MongoDB Documentation](https://www.mongodb.com/docs)
+- <a href="https://nextjs.org/docs" target="_blank">Next.js Documentation</a>
+- <a href="https://bun.sh/docs" target="_blank">Bun Documentation</a>
+- <a href="https://www.prisma.io/docs" target="_blank">Prisma Documentation</a>
+- <a href="https://www.mongodb.com/docs" target="_blank">MongoDB Documentation</a>
